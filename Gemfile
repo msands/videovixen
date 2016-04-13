@@ -21,8 +21,8 @@ gem 'slim-rails', '~> 3.0.1'
 # Set environmental varibles
 gem 'figaro', '~> 1.1.1'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# User authentication
+gem 'devise', '~> 3.5.6'
 
 group :development, :test do
   gem 'byebug'
