@@ -14,6 +14,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'will_paginate', '~> 3.1.0'
 
+# Font-awesome icons
+gem 'font-awesome-sass', '~> 4.5.0'
+
 # Use Slim templating engine and autogenerate slim pages
 gem 'slim', '~> 3.0.6'
 gem 'slim-rails', '~> 3.0.1'
