@@ -13,19 +13,17 @@ nav.large
         h1
           | VideoVixen
       ul.nav.nav-justified
+        li= link_to "Home", root_path
         li
-          a.active href="#"  Home
         li
-        li
-          a href="#"  Politics
-        li
-          a href="#"  Opinion
-        li
-          a href="#"  Sports
-        li
-          a href="#"  Local
-        li
-          a href="#"  Tech
+        - if user_signed_in?
+          | Logged in as
+            strong= current_user.email
+          li= link_to "Edit Profile", edit_user_registration
+          li= link_to "Logout", destroy_user_session_path, method: :delete
+        - else
+          li= link_to "Sign up", new_user_registration_path
+          li= link_to "Login", new_user_session_path
 section.stretch
   p
     | Scroll
