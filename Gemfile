@@ -20,7 +20,7 @@ gem 'simple_form', '~> 3.2.1'
 # Font-awesome icons
 gem 'font-awesome-sass', '~> 4.5.0'
 
-# Use Slim templating engine and autogenerate slim pages
+# Use Slim templating engine and autogenerate slim views
 gem 'slim', '~> 3.0.6'
 gem 'slim-rails', '~> 3.0.1'
 
