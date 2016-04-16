@@ -68,6 +68,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise_invitable (1.5.5)
+      actionmailer (>= 3.2.6, < 5)
+      devise (>= 3.2.0)
     erubis (2.7.0)
     execjs (2.6.0)
     figaro (1.1.1)
@@ -205,6 +208,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.6)
+  devise_invitable (~> 1.5.5)
   figaro (~> 1.1.1)
   font-awesome-sass (~> 4.5.0)
   jbuilder (~> 2.0)
