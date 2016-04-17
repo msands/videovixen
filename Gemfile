@@ -14,15 +14,22 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'will_paginate', '~> 3.1.0'
 
-# Use Slim templating engine and autogenerate slim pages
+# Simple Forms
+gem 'simple_form', '~> 3.2.1'
+
+# Font-awesome icons
+gem 'font-awesome-sass', '~> 4.5.0'
+
+# Use Slim templating engine and autogenerate slim views
 gem 'slim', '~> 3.0.6'
 gem 'slim-rails', '~> 3.0.1'
 
 # Set environmental varibles
 gem 'figaro', '~> 1.1.1'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# User authentication
+gem 'devise', '~> 3.5.6'
+gem 'devise_invitable', '~> 1.5.5'
 
 group :development, :test do
   gem 'byebug'

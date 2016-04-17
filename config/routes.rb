@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+
+  root 'static_pages#home'
+
+  get 'about' => 'static_pages#about'
+  get 'terms' => 'static_pages#terms'
+  get 'privacy' => 'static_pages#privacy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

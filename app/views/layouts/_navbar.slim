@@ -1,0 +1,29 @@
+nav.large
+  .container
+    .nav-top.clearfix
+      .logo
+        h1
+          | VideoVixen
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        i.fa.fa-bars
+  .main-nav.navbar-collapse.collapse
+    .container
+      .minilogo
+        h1
+          | VideoVixen
+      ul.nav.nav-justified
+        li= link_to "Home", root_path
+        li
+        li
+        - if user_signed_in?
+          li.dropdown role="presentation"
+            a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+              = current_user.email
+              span.caret
+            ul.dropdown-menu
+              li= link_to "Edit Profile", edit_user_registration_path
+          li= link_to "Logout", destroy_user_session_path, method: :delete
+        - else
+          li= link_to "Sign up", new_user_registration_path
+          li= link_to "Login", new_user_session_path
