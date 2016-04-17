@@ -15,6 +15,7 @@ h2
     = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
   .form-actions
     = f.button :submit, "Update"
+h3= link_to "Invite a friend", new_user_invitation_path
 h3
   | Cancel my account
 p
