@@ -30,6 +30,7 @@ gem 'figaro', '~> 1.1.1'
 # User authentication
 gem 'devise', '~> 3.5.6'
 gem 'devise_invitable', '~> 1.5.5'
+gem 'omniauth', '~> 1.3.1'
 
 group :development, :test do
   gem 'byebug'
