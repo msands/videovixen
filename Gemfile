@@ -32,6 +32,9 @@ gem 'devise', '~> 3.5.6'
 gem 'devise_invitable', '~> 1.5.5'
 gem 'omniauth', '~> 1.3.1'
 gem 'omniauth-twitter', '~> 1.2.1'
+gem 'omniauth-facebook', '~> 3.0.0'
+gem 'omniauth-instagram', '~> 1.0.2'
+gem 'omniauth-google-oauth2', '~> 0.4.1'
 
 group :development, :test do
   gem 'byebug'
