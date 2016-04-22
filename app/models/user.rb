@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :authentications
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
@@ -37,6 +38,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  def apply_omniauth(omniauth)
+    self.email = omniauth['user_info']['email'] if email.blank?
+    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+  end
+
+  def password_required?
+    (authentications.empty? || !password.blank?) && super
+  end
+
+  # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address#gmail-or-mecom-style
+  #
   # def create_login
   #   if self.username.blank?
   #     email = self.email.split(/@/)
