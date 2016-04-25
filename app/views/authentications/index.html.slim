@@ -1,4 +1,4 @@
-- title "Social Network Authentication"
+h2 Social Network Authentication
 
 - if @authentications
   - unless @authentications.empty?
@@ -11,9 +11,8 @@
             .uid= authentication.uid
             = link_to "X", authentication, :confirm => 'Are you sure youw ant to remove this authentication option?', :method => :delete, :class => "remove"
         .clear
-  p.strong Add another service to sign in with:
+    p.strong Add another service to sign in with:
   - else
-  p.strong Sign in through one of these services:
+    p.strong Sign in through one of these services:
 
-- link_to "/auth/twitter/", :class => "auth_provider" do
-  = image_tag "social/twitter.jpg", :size => "64x64", :alt => "Twitter"
+

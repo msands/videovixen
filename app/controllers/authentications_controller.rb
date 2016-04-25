@@ -16,6 +16,10 @@ class AuthenticationsController < ApplicationController
     else
       user = User.new
       user.apply_omniauth(omniauth)
+      if omniauth.info.email.present?
+        user.email = omniauth.info.email
+        user.confirmed_at = Time.now
+      end
       if user.save
         flash[:notice] = "Signed in successfully."
         sign_in_and_redirect(:user, user)
