@@ -9,8 +9,8 @@ html
     = csrf_meta_tags
   body
     = render 'layouts/navbar'
-    - flash.each do |name, msg|
-      = content_tag :div, msg, id: "flash_#{name}"
+    .text-center
+      = flash_messages
     .container
       = yield
     = render 'layouts/footer'
