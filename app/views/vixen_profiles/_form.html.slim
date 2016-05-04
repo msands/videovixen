@@ -1,0 +1,25 @@
+= simple_form_for(@vixen_profile) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :gender
+    = f.input :birthday
+    = f.input :location
+    = f.input :height
+    = f.input :weight
+    = f.input :bust
+    = f.input :waist
+    = f.input :hips
+    = f.input :cup
+    = f.input :dress
+    = f.input :ethnicity
+    = f.input :experience
+    = f.input :work
+    = f.input :rate
+    = f.input :travel
+    = f.input :hair_makeup
+    = f.input :wardrobe
+    = f.input :bio
+
+  .form-actions
+    = f.button :submit

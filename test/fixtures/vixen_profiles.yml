@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gender: false
+  birthday: 2016-05-03
+  location: MyString
+  height: 1
+  weight: 1
+  bust: 1
+  waist: 1
+  hips: 1
+  cup: MyString
+  dress: 1
+  ethnicity: MyString
+  experience: MyString
+  work: MyString
+  rate: 1
+  travel: false
+  hair_makeup: MyString
+  wardrobe: false
+  bio: MyText
+
+two:
+  gender: false
+  birthday: 2016-05-03
+  location: MyString
+  height: 1
+  weight: 1
+  bust: 1
+  waist: 1
+  hips: 1
+  cup: MyString
+  dress: 1
+  ethnicity: MyString
+  experience: MyString
+  work: MyString
+  rate: 1
+  travel: false
+  hair_makeup: MyString
+  wardrobe: false
+  bio: MyText

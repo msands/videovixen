@@ -1,0 +1,55 @@
+h1 Listing vixen_profiles
+
+table
+  thead
+    tr
+      th Gender
+      th Birthday
+      th Location
+      th Height
+      th Weight
+      th Bust
+      th Waist
+      th Hips
+      th Cup
+      th Dress
+      th Ethnicity
+      th Experience
+      th Work
+      th Rate
+      th Travel
+      th Hair makeup
+      th Wardrobe
+      th Bio
+      th
+      th
+      th
+
+  tbody
+    - @vixen_profiles.each do |vixen_profile|
+      tr
+        td = vixen_profile.gender
+        td = vixen_profile.birthday
+        td = vixen_profile.location
+        td = vixen_profile.height
+        td = vixen_profile.weight
+        td = vixen_profile.bust
+        td = vixen_profile.waist
+        td = vixen_profile.hips
+        td = vixen_profile.cup
+        td = vixen_profile.dress
+        td = vixen_profile.ethnicity
+        td = vixen_profile.experience
+        td = vixen_profile.work
+        td = vixen_profile.rate
+        td = vixen_profile.travel
+        td = vixen_profile.hair_makeup
+        td = vixen_profile.wardrobe
+        td = vixen_profile.bio
+        td = link_to 'Show', vixen_profile
+        td = link_to 'Edit', edit_vixen_profile_path(vixen_profile)
+        td = link_to 'Destroy', vixen_profile, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Vixen profile', new_vixen_profile_path
