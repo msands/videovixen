@@ -1,6 +1,7 @@
 class VixenProfile < ActiveRecord::Base
   GENDERS = ["Female", "Male"]
-  HEIGHT = ["5'", "5'1", "5'2", "5'3", "5'4", "5'5", "5'6", "5'7", "5'8", "5'9", "5'10", "5'11", "6'", "6'1", "6'2", "6'3", "6'4", "6'5"]
+  HEIGHT_FEET = ["4", "5", "6"]
+  HEIGHT_INCHES = (0..11)
   WEIGHT = (100..250)
   BUST = (32..42).step(2)
   WAIST = (24..34).step(2)

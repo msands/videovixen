@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504014908) do
+ActiveRecord::Schema.define(version: 20160505185518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20160504014908) do
     t.boolean  "gender"
     t.date     "birthday"
     t.string   "location"
-    t.integer  "height"
     t.integer  "weight"
     t.integer  "bust"
     t.integer  "waist"
@@ -78,8 +77,10 @@ ActiveRecord::Schema.define(version: 20160504014908) do
     t.string   "hair_makeup"
     t.boolean  "wardrobe"
     t.text     "bio"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "height_feet"
+    t.integer  "height_inches"
   end
 
 end
