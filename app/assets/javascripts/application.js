@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require modernizr.min
 //= require bootstrap-sprockets
 //= require navbar
 //= require static_pages
