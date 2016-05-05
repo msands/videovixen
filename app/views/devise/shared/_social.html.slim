@@ -1,8 +1,20 @@
-h4.text-center
+h3.text-center
   | Use social media authentication
 
 .text-center
-  = link_to image_tag("social/facebook.png"), "/auth/facebook/"
-  = link_to image_tag("social/google.png"), "/auth/google_oauth2/"
-  = link_to image_tag("social/twitter.png"), "/auth/twitter/"
-  = link_to image_tag("social/instagram.png"), "/auth/instagram/"
+
+  = link_to "/auth/facebook", class: "button btn btn-block btn-social btn-facebook" do
+    | Facebook
+    i.fa.fa-facebook
+
+  = link_to "/auth/google_oauth2", class: "button btn btn-block btn-social btn-google-plus" do
+    | Google Plus
+    i.fa.fa-google-plus
+
+  = link_to "/auth/twitter", class: "button btn btn-block btn-social btn-twitter" do
+    | Twitter
+    i.fa.fa-twitter
+
+  = link_to "/auth/instagram", class: "button btn btn-block btn-social btn-instagram" do
+    | Instagram
+    i.fa.fa-instagram
