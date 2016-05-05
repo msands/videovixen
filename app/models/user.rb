@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :authentication_keys => [:login]
 
   attr_accessor :login
+  has_one :vixen_profile, dependent: :destroy
+
+  delegate :username, to: :vixen_profile
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validate :validate_username

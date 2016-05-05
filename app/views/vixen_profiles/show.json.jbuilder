@@ -1,1 +1,0 @@
-json.extract! @vixen_profile, :id, :gender, :birthday, :location, :height, :weight, :bust, :waist, :hips, :cup, :dress, :ethnicity, :experience, :work, :rate, :travel, :hair_makeup, :wardrobe, :bio, :created_at, :updated_at
