@@ -36,6 +36,9 @@ gem 'omniauth-facebook', '~> 3.0.0'
 gem 'omniauth-instagram', '~> 1.0.2'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 
+# Add birthday gem
+gem 'birthday', '~> 0.3.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

@@ -1,2 +1,15 @@
-h1 MyProfilesController#show
-p Find me in app/views/my_profiles_controller/show.html.slim
+.col-md-3
+  p= image_tag("http://placehold.it/200x266")
+  h4= link_to "Photo Gallery", '#'
+
+h2.text-center My Profile
+
+.col-md-3
+  p
+    = current_user.username
+    br
+    = @vixen_profile.gender
+    br
+    = @vixen_profile.birthday_age
+    br
+    = @vixen_profile.location

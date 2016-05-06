@@ -18,6 +18,7 @@ class VixenProfile < ActiveRecord::Base
   belongs_to :user
 
   validates :gender, presence: true
+  acts_as_birthday :birthday
 
   delegate :email, to: :user
 end
