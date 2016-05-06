@@ -1,5 +1,6 @@
 class VixenProfilesController < ApplicationController
   before_action :authenticate_user!
+  skip_before_action :check_profile, only: [:new, :create]
 
   def index
     @vixen_profiles = VixenProfile.all
@@ -14,31 +15,27 @@ class VixenProfilesController < ApplicationController
   end
 
   def edit
+    @vixen_profile = VixenProfile.find(params[:id])
   end
 
   def create
     @vixen_profile = VixenProfile.new(vixen_profile_params)
-
-    respond_to do |format|
-      if @vixen_profile.save
-        format.html { redirect_to @vixen_profile, notice: 'Vixen profile was successfully created.' }
-        format.json { render :show, status: :created, location: @vixen_profile }
-      else
-        format.html { render :new }
-        format.json { render json: @vixen_profile.errors, status: :unprocessable_entity }
-      end
+    @vixen_profile.user = current_user
+    if @vixen_profile.save
+      redirect_to my_profiles_path, notice: 'Profile was successfully saved'
+    else
+      flash[:error] = 'There was an error saving your profile'
+      render 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @vixen_profile.update(vixen_profile_params)
-        format.html { redirect_to @vixen_profile, notice: 'Vixen profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @vixen_profile }
-      else
-        format.html { render :edit }
-        format.json { render json: @vixen_profile.errors, status: :unprocessable_entity }
-      end
+    @vixen_profile = VixenProfile.find(params[:id])
+    if @vixen_profile.update_attributes(vixen_profile_paras)
+      flash[:success] = "Profile updated"
+      redirect_to my_profiles_path
+    else
+      render 'edit'
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505185518) do
+ActiveRecord::Schema.define(version: 20160506041054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160505185518) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   create_table "vixen_profiles", force: :cascade do |t|
-    t.boolean  "gender"
+    t.string   "gender"
     t.date     "birthday"
     t.string   "location"
     t.integer  "weight"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160505185518) do
     t.datetime "updated_at",    null: false
     t.integer  "height_feet"
     t.integer  "height_inches"
+    t.integer  "user_id"
   end
 
 end
