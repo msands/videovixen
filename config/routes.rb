@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resource :my_profiles, only: :show
+
   resources :vixen_profiles
   get '/auth/:provider/callback' => 'authentications#create'
   resources :authentications

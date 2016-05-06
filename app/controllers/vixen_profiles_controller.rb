@@ -1,11 +1,12 @@
 class VixenProfilesController < ApplicationController
-  before_action :set_vixen_profile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @vixen_profiles = VixenProfile.all
   end
 
   def show
+    @vixen_profile = VixenProfile.find(params[:id])
   end
 
   def new
@@ -50,10 +51,6 @@ class VixenProfilesController < ApplicationController
   end
 
   private
-
-  def set_vixen_profile
-    @vixen_profile = VixenProfile.find(params[:id])
-  end
 
   def vixen_profile_params
     params.require(:vixen_profile).permit(:gender, :birthday, :location, :height, :weight, :bust, :waist, :hips, :cup, :dress, :ethnicity, :experience, :work, :rate, :travel, :hair_makeup, :wardrobe, :bio)
