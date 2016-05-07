@@ -2,14 +2,68 @@
   p= image_tag("http://placehold.it/200x266")
   h4= link_to "Photo Gallery", '#'
 
-h2.text-center My Profile
+  hr
 
-.col-md-3
+  blockquote Stats
   p
-    = current_user.username
+    strong Age:
+    =< @vixen_profile.birthday_age
     br
+    strong Height:
+    =< @vixen_profile.height_feet
+    |'
+    =< @vixen_profile.height_inches
+    |"
+    br
+    strong Weight:
+    =< @vixen_profile.weight
+    br
+    strong Bust:
+    =< @vixen_profile.bust
+    br
+    strong Waist:
+    =< @vixen_profile.waist
+    br
+    strong Hips:
+    =< @vixen_profile.hips
+    br
+    strong Cup:
+    =< @vixen_profile.cup
+    br
+    strong Dress:
+    =< @vixen_profile.dress
+    br
+    strong Ethnicity:
+    =< @vixen_profile.ethnicity
+    br
+    strong Experience:
+    =< @vixen_profile.experience
+    br
+    strong Work:
+    =< @vixen_profile.work
+    br
+    strong Rate:
+    =< @vixen_profile.rate
+    br
+    strong Travel:
+    =< @vixen_profile.travel
+    br
+    strong Own Hair/Makeup:
+    =< @vixen_profile.hair_makeup
+    br
+    strong Own Wardrobe:
+    =< @vixen_profile.wardrobe
+
+.col-md-9
+  h2 = current_user.username
+
+  p
     = @vixen_profile.gender
     br
-    = @vixen_profile.birthday_age
-    br
     = @vixen_profile.location
+
+  hr
+
+  blockquote About Me
+  p
+    = @vixen_profile.bio
