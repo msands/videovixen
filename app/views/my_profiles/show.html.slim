@@ -54,6 +54,13 @@
     strong Own Wardrobe:
     =< @vixen_profile.wardrobe
 
+    blockquote Info
+    strong Last Login:
+    =< @current_user.updated_at.strftime("%B %d, %Y")
+    br
+    strong Sign Up:
+    =< @current_user.created_at.strftime("%B %d, %Y")
+
 .col-md-9
   h2 = current_user.username
 
