@@ -1,5 +1,5 @@
 class VixenProfilesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   skip_before_action :check_profile, only: [:new, :create]
 
   def index
