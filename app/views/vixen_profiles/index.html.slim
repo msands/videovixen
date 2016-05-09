@@ -1,0 +1,21 @@
+h2.text-center View all Vixen Profiles
+
+- @vixen_profiles.each do |vixen_profile|
+  .col-md-3
+    .box.panel.panel-default
+      .panel-heading
+        = link_to vixen_profile.user.username, vixen_profile
+
+      .panel-body
+        = image_tag("http://placehold.it/300x225")
+
+      .panel-footer
+        p
+          strong Age:
+          =< vixen_profile.birthday_age
+          br
+          strong Gender:
+          =< vixen_profile.gender
+          br
+          strong Location:
+          =< vixen_profile.location

@@ -1,0 +1,78 @@
+.col-md-3
+  p= image_tag("http://placehold.it/200x266")
+  h4= link_to "Photo Gallery", '#'
+
+  hr
+
+  blockquote Stats
+  p
+    strong Age:
+    =< @vixen_profile.birthday_age
+    br
+    strong Height:
+    =< @vixen_profile.height_feet
+    |'
+    =< @vixen_profile.height_inches
+    |"
+    br
+    strong Weight:
+    =< @vixen_profile.weight
+    br
+    strong Bust:
+    =< @vixen_profile.bust
+    br
+    strong Waist:
+    =< @vixen_profile.waist
+    br
+    strong Hips:
+    =< @vixen_profile.hips
+    br
+    strong Cup:
+    =< @vixen_profile.cup
+    br
+    strong Dress:
+    =< @vixen_profile.dress
+    br
+    strong Ethnicity:
+    =< @vixen_profile.ethnicity
+    br
+    strong Experience:
+    =< @vixen_profile.experience
+    br
+    strong Work:
+    =< @vixen_profile.work
+    br
+    strong Rate:
+    =< @vixen_profile.rate
+    br
+    strong Travel:
+    =< human_boolean(@vixen_profile.travel)
+    br
+    strong Own Hair/Makeup:
+    =< @vixen_profile.hair_makeup
+    br
+    strong Own Wardrobe:
+    =< human_boolean(@vixen_profile.wardrobe)
+
+    blockquote Info
+    strong Last Login:
+    =< @current_user.updated_at.strftime("%B %d, %Y")
+    br
+    strong Sign Up:
+    =< @current_user.created_at.strftime("%B %d, %Y")
+
+.col-md-9
+  h5
+    = link_to "Edit Profile", edit_vixen_profile_path(current_user.vixen_profile)
+  h2 = current_user.username
+
+  p
+    = @vixen_profile.gender
+    br
+    = @vixen_profile.location
+
+  hr
+
+  blockquote About Me
+  p
+    = @vixen_profile.bio

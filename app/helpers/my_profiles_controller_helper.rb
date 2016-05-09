@@ -1,0 +1,2 @@
+module MyProfilesControllerHelper
+end
