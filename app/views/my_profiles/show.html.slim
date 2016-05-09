@@ -40,8 +40,9 @@
     =< @vixen_profile.experience
     br
     strong Work:
-    =< @vixen_profile.work
-    br
+    - @vixen_profile.work.each do |work_value|
+      br
+      = work_value
     strong Rate:
     =< @vixen_profile.rate
     br
