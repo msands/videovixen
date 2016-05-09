@@ -11,5 +11,9 @@
  * file per style scope.
  *
  *= require custom
+<<<<<<< HEAD
+ *= require buttons
+=======
  *= require vixen_profiles
+>>>>>>> vixen_profile
  */
