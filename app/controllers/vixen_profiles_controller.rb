@@ -31,7 +31,7 @@ class VixenProfilesController < ApplicationController
 
   def update
     @vixen_profile = VixenProfile.find(params[:id])
-    if @vixen_profile.update_attributes(vixen_profile_paras)
+    if @vixen_profile.update_attributes(vixen_profile_params)
       flash[:success] = "Profile updated"
       redirect_to my_profiles_path
     else

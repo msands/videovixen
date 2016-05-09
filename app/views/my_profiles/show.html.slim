@@ -62,6 +62,8 @@
     =< @current_user.created_at.strftime("%B %d, %Y")
 
 .col-md-9
+  h5
+    = link_to "Edit Profile", edit_vixen_profile_path(current_user.vixen_profile)
   h2 = current_user.username
 
   p

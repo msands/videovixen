@@ -1,4 +1,4 @@
-class MyProfilesController < ApplicationController
+class MyProfilesController < VixenProfilesController
   before_action :authenticate_user!
 
   def show

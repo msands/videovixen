@@ -10,4 +10,12 @@ h2.text-center View all Vixen Profiles
         = image_tag("http://placehold.it/300x225")
 
       .panel-footer
-        = vixen_profile.birthday_age
+        p
+          strong Age:
+          =< vixen_profile.birthday_age
+          br
+          strong Gender:
+          =< vixen_profile.gender
+          br
+          strong Location:
+          =< vixen_profile.location
