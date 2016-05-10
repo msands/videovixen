@@ -21,5 +21,8 @@ class VixenProfile < ActiveRecord::Base
   validates :gender, presence: true
   acts_as_birthday :birthday
 
+  has_attached_file :profile_pic, styles: { profile: "200x266>", medium: "300x225>" }, default_url: "default/missing_:style.jpg"
+  validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
+
   delegate :email, to: :user
 end

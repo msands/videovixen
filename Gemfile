@@ -39,6 +39,10 @@ gem 'omniauth-google-oauth2', '~> 0.4.1'
 # Add birthday gem
 gem 'birthday', '~> 0.3.0'
 
+# Uploading of photos
+gem 'paperclip', '4.3.6'
+gem 'aws-sdk', '< 2.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :gender, collection: VixenProfile::GENDERS, as: :radio_buttons
+    = f.input :profile_pic, as: :file
     = f.input :birthday, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year - 18, selected: Date.today.year - 25, order: [:month, :day, :year]
     = f.input :location, placeholder: "City, State"
     = f.input :height_feet, collection: VixenProfile::HEIGHT_FEET
