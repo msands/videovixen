@@ -11,6 +11,7 @@ class VixenProfile < ActiveRecord::Base
   ETHNICITIES = ["Black", "White", "Asian", "Hispanic", "Other"]
   EXPERIENCE = ["No Experience", "Some Experience", "Experienced", "Very Experienced"]
   WORK = ["Acting", "Exotic", "Fitness", "Lingerie", "Music Video", "Nude", "Promotional", "Swimwear"]
+  RATE_PER = ["Hour", "Day", "Week"]
   TRAVEL = ["Yes", "No", "Depending on distance"]
   HAIR_MAKEUP = ["Own Hair", "Own Makeup", "Both", "None"]
   WARDROBE = ["Yes", "No"]

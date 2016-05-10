@@ -17,6 +17,7 @@
     = f.input :experience, collection: VixenProfile::EXPERIENCE
     = f.input :work, collection: VixenProfile::WORK, as: :check_boxes, label: "Work Desired (Select all that apply)"
     = f.input :rate
+    = f.input :rate_per, collection: VixenProfile::RATE_PER
     = f.input :travel, collection: VixenProfile::TRAVEL, as: :radio_buttons, label: "Are you willing to travel?"
     = f.input :hair_makeup, collection: VixenProfile::HAIR_MAKEUP, as: :radio_buttons, label: "Do you do your own hair and makeup?"
     = f.input :wardrobe, collection: VixenProfile::WARDROBE, as: :radio_buttons, label: "Will you be providing your own wardrobe?"
