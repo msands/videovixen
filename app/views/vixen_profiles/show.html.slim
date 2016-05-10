@@ -37,8 +37,9 @@
     =< @vixen_profile.dress
     br
     strong Ethnicity:
-    =< @vixen_profile.ethnicity
-    br
+    - @vixen_profile.ethnicity.each do |ethnicity|
+      br
+      = ethnicity
     strong Experience:
     =< @vixen_profile.experience
     br
