@@ -11,24 +11,28 @@
     br
     strong Height:
     =< @vixen_profile.height_feet
-    |'
+    |&#39;
     =< @vixen_profile.height_inches
-    |"
+    |&quot;
     br
     strong Weight:
     =< @vixen_profile.weight
+    |&quot;
     br
     strong Bust:
     =< @vixen_profile.bust
+    |&quot;
     br
     strong Waist:
     =< @vixen_profile.waist
+    |&quot;
     br
     strong Hips:
     =< @vixen_profile.hips
+    |&quot;
     br
     strong Cup:
-    =< @vixen_profile.cup
+    = @vixen_profile.cup
     br
     strong Dress:
     =< @vixen_profile.dress
@@ -44,16 +48,17 @@
       br
       = work_value
     strong Rate:
+    |&nbsp; &#36;
     =< @vixen_profile.rate
     br
     strong Travel:
-    =< human_boolean(@vixen_profile.travel)
+    =< @vixen_profile.travel
     br
     strong Own Hair/Makeup:
     =< @vixen_profile.hair_makeup
     br
     strong Own Wardrobe:
-    =< human_boolean(@vixen_profile.wardrobe)
+    =< @vixen_profile.wardrobe
 
     blockquote Info
     strong Last Login:
