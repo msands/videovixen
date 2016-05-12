@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
+$(document).on "page:change", ->
   $("input[type='radio'][name='vixen_profile[gender]']").change ->
     $('#Female').css 'display', 'none'
     $('#Male').css 'display', 'none'
