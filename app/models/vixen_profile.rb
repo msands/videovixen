@@ -8,6 +8,13 @@ class VixenProfile < ActiveRecord::Base
   HIPS = (34..44).step(2)
   CUPS = ["AA", "A", "B", "C", "D", "DD", "DDD/F", "G"]
   DRESS_SIZE = (2..16).step(2)
+  CHEST = (40..56).step(2)
+  BICEP = (16..24).step(0.5)
+  INSEAM = (28..36).step(2)
+  SUIT = (40..56).step(2)
+  GLOVE = (8..12)
+  HAT = (6..8).step(0.25)
+  SHOE = (8..14).step(0.5)
   ETHNICITIES = ["Black", "White", "Asian", "Hispanic", "Other"]
   EXPERIENCE = ["No Experience", "Some Experience", "Experienced", "Very Experienced"]
   WORK = ["Acting", "Exotic", "Fitness", "Lingerie", "Music Video", "Nude", "Promotional", "Swimwear"]

@@ -9,11 +9,20 @@
     = f.input :height_feet, collection: VixenProfile::HEIGHT_FEET
     = f.input :height_inches, collection: VixenProfile::HEIGHT_INCHES
     = f.input :weight, collection: VixenProfile::WEIGHT
-    = f.input :bust, collection: VixenProfile::BUST
-    = f.input :waist, collection: VixenProfile::WAIST
-    = f.input :hips, collection: VixenProfile::HIPS
-    = f.input :cup, collection: VixenProfile::CUPS
-    = f.input :dress, collection: VixenProfile::DRESS_SIZE
+    #Female
+      = f.input :bust, collection: VixenProfile::BUST
+      = f.input :waist, collection: VixenProfile::WAIST
+      = f.input :hips, collection: VixenProfile::HIPS
+      = f.input :cup, collection: VixenProfile::CUPS
+      = f.input :dress, collection: VixenProfile::DRESS_SIZE
+    #Male
+      = f.input :chest, collection: VixenProfile::CHEST
+      = f.input :bicep, collection: VixenProfile::BICEP
+      = f.input :inseam, collection: VixenProfile::INSEAM
+      = f.input :suit, collection: VixenProfile::SUIT
+      = f.input :glove, collection: VixenProfile::GLOVE
+      = f.input :hat, collection: VixenProfile::HAT
+    = f.input :shoe, collection: VixenProfile::SHOE
     = f.input :ethnicity, collection: VixenProfile::ETHNICITIES, as: :check_boxes
     = f.input :experience, collection: VixenProfile::EXPERIENCE
     = f.input :work, collection: VixenProfile::WORK, as: :check_boxes, label: "Work Desired (Select all that apply)"
