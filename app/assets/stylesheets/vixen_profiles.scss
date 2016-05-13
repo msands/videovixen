@@ -3,10 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .box {
-        margin: 5px;
-        width: 284px;
+  margin: 5px;
+  width: 284px;
 }
 
 .box img {
-        width: 100%;
+  width: 100%;
+}
+
+blockquote {
+  border-left: 10px solid #9171DA
+}
+
+#Female,
+#Male
+{
+    display: none;
 }

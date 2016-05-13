@@ -1,5 +1,5 @@
 .col-md-3
-  p= image_tag("http://placehold.it/200x266")
+  p= image_tag @vixen_profile.profile_pic.url(:profile)
   h4= link_to "Photo Gallery", '#'
 
   hr
@@ -11,48 +11,57 @@
     br
     strong Height:
     =< @vixen_profile.height_feet
-    |'
+    |&#39;
     =< @vixen_profile.height_inches
-    |"
+    |&quot;
     br
     strong Weight:
     =< @vixen_profile.weight
+    |&quot;
     br
     strong Bust:
     =< @vixen_profile.bust
+    |&quot;
     br
     strong Waist:
     =< @vixen_profile.waist
+    |&quot;
     br
     strong Hips:
     =< @vixen_profile.hips
+    |&quot;
     br
     strong Cup:
-    =< @vixen_profile.cup
+    = @vixen_profile.cup
     br
     strong Dress:
     =< @vixen_profile.dress
     br
     strong Ethnicity:
-    =< @vixen_profile.ethnicity
-    br
+    - @vixen_profile.ethnicity.each do |ethnicity|
+      br
+      = ethnicity
     strong Experience:
     =< @vixen_profile.experience
     br
     strong Work:
-    =< @vixen_profile.work
-    br
+    - @vixen_profile.work.each do |work_value|
+      br
+      = work_value
     strong Rate:
-    =< @vixen_profile.rate
+    |&nbsp; &#36;
+    =<> @vixen_profile.rate
+    |per
+    =< @vixen_profile.rate_per
     br
     strong Travel:
-    =< human_boolean(@vixen_profile.travel)
+    =< @vixen_profile.travel
     br
     strong Own Hair/Makeup:
     =< @vixen_profile.hair_makeup
     br
     strong Own Wardrobe:
-    =< human_boolean(@vixen_profile.wardrobe)
+    =< @vixen_profile.wardrobe
 
     blockquote Info
     strong Last Login:

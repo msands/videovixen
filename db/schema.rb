@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506041054) do
+ActiveRecord::Schema.define(version: 20160512044249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,19 +69,31 @@ ActiveRecord::Schema.define(version: 20160506041054) do
     t.integer  "hips"
     t.string   "cup"
     t.integer  "dress"
-    t.string   "ethnicity"
     t.string   "experience"
-    t.string   "work"
     t.integer  "rate"
-    t.boolean  "travel"
+    t.string   "travel"
     t.string   "hair_makeup"
-    t.boolean  "wardrobe"
+    t.string   "wardrobe"
     t.text     "bio"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "height_feet"
     t.integer  "height_inches"
     t.integer  "user_id"
+    t.string   "work",                                  array: true
+    t.string   "rate_per"
+    t.string   "ethnicity",                             array: true
+    t.string   "profile_pic_file_name"
+    t.string   "profile_pic_content_type"
+    t.integer  "profile_pic_file_size"
+    t.datetime "profile_pic_updated_at"
+    t.integer  "shoe"
+    t.integer  "inseam"
+    t.integer  "chest"
+    t.integer  "suit"
+    t.integer  "glove"
+    t.integer  "hat"
+    t.integer  "bicep"
   end
 
 end

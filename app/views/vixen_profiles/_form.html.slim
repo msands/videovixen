@@ -3,20 +3,31 @@
 
   .form-inputs
     = f.input :gender, collection: VixenProfile::GENDERS, as: :radio_buttons
+    = f.input :profile_pic, as: :file
     = f.input :birthday, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year - 18, selected: Date.today.year - 25, order: [:month, :day, :year]
     = f.input :location, placeholder: "City, State"
     = f.input :height_feet, collection: VixenProfile::HEIGHT_FEET
     = f.input :height_inches, collection: VixenProfile::HEIGHT_INCHES
     = f.input :weight, collection: VixenProfile::WEIGHT
-    = f.input :bust, collection: VixenProfile::BUST
-    = f.input :waist, collection: VixenProfile::WAIST
-    = f.input :hips, collection: VixenProfile::HIPS
-    = f.input :cup, collection: VixenProfile::CUPS
-    = f.input :dress, collection: VixenProfile::DRESS_SIZE
+    #Female
+      = f.input :bust, collection: VixenProfile::BUST
+      = f.input :waist, collection: VixenProfile::WAIST
+      = f.input :hips, collection: VixenProfile::HIPS
+      = f.input :cup, collection: VixenProfile::CUPS
+      = f.input :dress, collection: VixenProfile::DRESS_SIZE
+    #Male
+      = f.input :chest, collection: VixenProfile::CHEST
+      = f.input :bicep, collection: VixenProfile::BICEP
+      = f.input :inseam, collection: VixenProfile::INSEAM
+      = f.input :suit, collection: VixenProfile::SUIT
+      = f.input :glove, collection: VixenProfile::GLOVE
+      = f.input :hat, collection: VixenProfile::HAT
+    = f.input :shoe, collection: VixenProfile::SHOE
     = f.input :ethnicity, collection: VixenProfile::ETHNICITIES, as: :check_boxes
     = f.input :experience, collection: VixenProfile::EXPERIENCE
     = f.input :work, collection: VixenProfile::WORK, as: :check_boxes, label: "Work Desired (Select all that apply)"
     = f.input :rate
+    = f.input :rate_per, collection: VixenProfile::RATE_PER
     = f.input :travel, collection: VixenProfile::TRAVEL, as: :radio_buttons, label: "Are you willing to travel?"
     = f.input :hair_makeup, collection: VixenProfile::HAIR_MAKEUP, as: :radio_buttons, label: "Do you do your own hair and makeup?"
     = f.input :wardrobe, collection: VixenProfile::WARDROBE, as: :radio_buttons, label: "Will you be providing your own wardrobe?"

@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'jbuilder', '~> 2.0'
 
 # Twitter Bootstrap framework
@@ -38,6 +39,10 @@ gem 'omniauth-google-oauth2', '~> 0.4.1'
 
 # Add birthday gem
 gem 'birthday', '~> 0.3.0'
+
+# Uploading of photos
+gem 'paperclip', '4.3.6'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'

@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require modernizr.min
 //= require bootstrap-sprockets
 //= require navbar
 //= require static_pages
+//= require vixen_profiles

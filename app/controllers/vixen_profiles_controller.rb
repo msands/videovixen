@@ -50,6 +50,6 @@ class VixenProfilesController < ApplicationController
   private
 
   def vixen_profile_params
-    params.require(:vixen_profile).permit(:gender, :birthday, :location, :height_feet, :height_inches, :weight, :bust, :waist, :hips, :cup, :dress, :ethnicity, :experience, :work, :rate, :travel, :hair_makeup, :wardrobe, :bio)
+    params.require(:vixen_profile).permit(:gender, :birthday, :location, :height_feet, :height_inches, :weight, :bust, :waist, :hips, :cup, :dress, :ethnicity, :experience, :rate, :rate_per, :travel, :hair_makeup, :wardrobe, :profile_pic, :bio, :chest, :bicep, :inseam, :suit, :glove, :hat, :shoe, ethnicity: [], work: [])
   end
 end
