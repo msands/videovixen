@@ -1,4 +1,4 @@
-class MyProfilesController < VixenProfilesController
+class MyProfilesController < TalentProfilesController
   before_action :authenticate_user!
 
   def show
