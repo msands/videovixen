@@ -3,7 +3,7 @@ nav.large
     .nav-top.clearfix
       .logo
         h1
-          | VideoVixen
+          | TalentRollCall
       button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
         span.sr-only Toggle navigation
         i.fa.fa-bars
@@ -11,10 +11,10 @@ nav.large
     .container
       .minilogo
         h1
-          | VideoVixen
+          | TalentRollCall
       ul.nav.nav-justified
         li= link_to "Home", root_path
-        li= link_to "Browse", vixen_profiles_path
+        li= link_to "Browse", talent_profiles_path
         li
         - if user_signed_in?
           li.dropdown role="presentation"

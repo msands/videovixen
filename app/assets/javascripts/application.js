@@ -18,4 +18,4 @@
 //= require bootstrap-sprockets
 //= require navbar
 //= require static_pages
-//= require vixen_profiles
+//= require talent_profiles

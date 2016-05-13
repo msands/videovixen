@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
 
   def check_profile
     return unless user_signed_in?
-    redirect_to new_vixen_profile_path unless profile_completed?
+    redirect_to new_talent_profile_path unless profile_completed?
   end
 
   def profile_completed?
-    current_user.vixen_profile.present?
+    current_user.talent_profile.present?
   end
 
   def configure_permitted_parameters

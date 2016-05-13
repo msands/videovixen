@@ -1,4 +1,4 @@
-class VixenProfile < ActiveRecord::Base
+class TalentProfile < ActiveRecord::Base
   GENDERS = ["Female", "Male"]
   HEIGHT_FEET = ["4", "5", "6"]
   HEIGHT_INCHES = (0..11)

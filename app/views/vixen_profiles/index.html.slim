@@ -1,10 +1,10 @@
-h2.text-center View all Vixen Profiles
+h2.text-center View all Talent Profiles
 
-- @vixen_profiles.each do |vixen_profile|
+- @talent_profiles.each do |talent_profile|
   .col-md-3
     .box.panel.panel-default
       .panel-heading
-        = link_to vixen_profile.user.username, vixen_profile
+        = link_to talent_profile.user.username, talent_profile
 
       .panel-body
         = image_tag("http://placehold.it/300x225")
@@ -12,10 +12,10 @@ h2.text-center View all Vixen Profiles
       .panel-footer
         p
           strong Age:
-          =< vixen_profile.birthday_age
+          =< talent_profile.birthday_age
           br
           strong Gender:
-          =< vixen_profile.gender
+          =< talent_profile.gender
           br
           strong Location:
-          =< vixen_profile.location
+          =< talent_profile.location

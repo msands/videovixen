@@ -2,7 +2,7 @@ class MyProfilesController < VixenProfilesController
   before_action :authenticate_user!
 
   def show
-    @vixen_profile = current_user.vixen_profile
+    @talent_profile = current_user.talent_profile
     render 'show'
   end
 

@@ -1,5 +1,5 @@
 module VixenProfilesHelper
-  def vixen_username
-    @vixen_profile.user.username
+  def talent_username
+    @talent_profile.user.username
   end
 end
