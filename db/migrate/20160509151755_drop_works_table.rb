@@ -1,6 +1,6 @@
 class DropWorksTable < ActiveRecord::Migration
   def up
-    remove_column :work
+    remove_column :vixen_profile, :work, :string
   end
 
   def down
