@@ -1,6 +1,6 @@
 class DropWorksTable < ActiveRecord::Migration
   def up
-    drop_table :works
+    drop_column :works
   end
 
   def down
