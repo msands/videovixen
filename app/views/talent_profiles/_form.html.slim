@@ -9,6 +9,10 @@
     = f.input :height_feet, collection: TalentProfile::HEIGHT_FEET
     = f.input :height_inches, collection: TalentProfile::HEIGHT_INCHES
     = f.input :weight, collection: TalentProfile::WEIGHT
+    = f.input :eye_color, collection: TalentProfile::EYE
+    = f.input :hair_color, collection: TalentProfile::HAIR_COLOR
+    = f.input :hair_length, collection: TalentProfile::HAIR_LENGTH
+    = f.input :hair_type, collection: TalentProfile::HAIR_TYPE
     #Female
       = f.input :bust, collection: TalentProfile::BUST
       = f.input :waist, collection: TalentProfile::WAIST
@@ -24,6 +28,7 @@
       = f.input :hat, collection: TalentProfile::HAT
     = f.input :shoe, collection: TalentProfile::SHOE
     = f.input :ethnicity, collection: TalentProfile::ETHNICITIES, as: :check_boxes
+    = f.input :languages, colection: TalentProfile::LANGUAGES, as: :check_boxes, label: "Languages and Dialects (Select all that apply)"
     = f.input :experience, collection: TalentProfile::EXPERIENCE
     = f.input :work, collection: TalentProfile::WORK, as: :check_boxes, label: "Work Desired (Select all that apply)"
     = f.input :rate
@@ -31,6 +36,7 @@
     = f.input :travel, collection: TalentProfile::TRAVEL, as: :radio_buttons, label: "Are you willing to travel?"
     = f.input :hair_makeup, collection: TalentProfile::HAIR_MAKEUP, as: :radio_buttons, label: "Do you do your own hair and makeup?"
     = f.input :wardrobe, collection: TalentProfile::WARDROBE, as: :radio_buttons, label: "Will you be providing your own wardrobe?"
+    = f.input :skills, label: "Skills and Special Abilities", placeholder: "Rollerskating, Twerking, etc"
     = f.input :bio
 
   .form-actions
