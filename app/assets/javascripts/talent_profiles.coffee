@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "page:change", ->
-  $("input[type='radio'][name='vixen_profile[gender]']").change ->
+  $("input[type='radio'][name='talent_profile[gender]']").change ->
     $('#Female').css 'display', 'none'
     $('#Male').css 'display', 'none'
     console.log $(this).val()

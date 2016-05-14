@@ -1,5 +1,5 @@
 .col-md-3
-  p= image_tag @vixen_profile.profile_pic.url(:profile)
+  p= image_tag @talent_profile.profile_pic.url(:profile)
   h4= link_to "Photo Gallery", '#'
 
   hr
@@ -7,61 +7,61 @@
   blockquote Stats
   p
     strong Age:
-    =< @vixen_profile.birthday_age
+    =< @talent_profile.birthday_age
     br
     strong Height:
-    =< @vixen_profile.height_feet
+    =< @talent_profile.height_feet
     |&#39;
-    =< @vixen_profile.height_inches
+    =< @talent_profile.height_inches
     |&quot;
     br
     strong Weight:
-    =< @vixen_profile.weight
+    =< @talent_profile.weight
     |&quot;
     br
     strong Bust:
-    =< @vixen_profile.bust
+    =< @talent_profile.bust
     |&quot;
     br
     strong Waist:
-    =< @vixen_profile.waist
+    =< @talent_profile.waist
     |&quot;
     br
     strong Hips:
-    =< @vixen_profile.hips
+    =< @talent_profile.hips
     |&quot;
     br
     strong Cup:
-    = @vixen_profile.cup
+    = @talent_profile.cup
     br
     strong Dress:
-    =< @vixen_profile.dress
+    =< @talent_profile.dress
     br
     strong Ethnicity:
-    - @vixen_profile.ethnicity.each do |ethnicity|
+    - @talent_profile.ethnicity.each do |ethnicity|
       br
       = ethnicity
     strong Experience:
-    =< @vixen_profile.experience
+    =< @talent_profile.experience
     br
     strong Work:
-    - @vixen_profile.work.each do |work_value|
+    - @talent_profile.work.each do |work_value|
       br
       = work_value
     strong Rate:
     |&nbsp; &#36;
-    =<> @vixen_profile.rate
+    =<> @talent_profile.rate
     |per
-    =< @vixen_profile.rate_per
+    =< @talent_profile.rate_per
     br
     strong Travel:
-    =< @vixen_profile.travel
+    =< @talent_profile.travel
     br
     strong Own Hair/Makeup:
-    =< @vixen_profile.hair_makeup
+    =< @talent_profile.hair_makeup
     br
     strong Own Wardrobe:
-    =< @vixen_profile.wardrobe
+    =< @talent_profile.wardrobe
 
     blockquote Info
     strong Last Login:
@@ -72,16 +72,16 @@
 
 .col-md-9
   h5
-    = link_to "Edit Profile", edit_vixen_profile_path(current_user.vixen_profile)
+    = link_to "Edit Profile", edit_talent_profile_path(current_user.talent_profile)
   h2 = current_user.username
 
   p
-    = @vixen_profile.gender
+    = @talent_profile.gender
     br
-    = @vixen_profile.location
+    = @talent_profile.location
 
   hr
 
   blockquote About Me
   p
-    = @vixen_profile.bio
+    = @talent_profile.bio
