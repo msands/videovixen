@@ -19,35 +19,62 @@
     =< @talent_profile.weight
     |&quot;
     br
-    strong Bust:
-    =< @talent_profile.bust
-    |&quot;
-    br
-    strong Waist:
-    =< @talent_profile.waist
-    |&quot;
-    br
-    strong Hips:
-    =< @talent_profile.hips
-    |&quot;
-    br
-    strong Cup:
-    = @talent_profile.cup
-    br
-    strong Dress:
-    =< @talent_profile.dress
+    - if @talent_profile.gender.include? 'Female'
+      strong Bust:
+      =< @talent_profile.bust
+      |&quot;
+      br
+      strong Waist:
+      =< @talent_profile.waist
+      |&quot;
+      br
+      strong Hips:
+      =< @talent_profile.hips
+      |&quot;
+      br
+      strong Cup:
+      =< @talent_profile.cup
+      br
+      strong Dress:
+      =< @talent_profile.dress
+      br
+    - if @talent_profile.gender.include? 'Male'
+      strong Chest:
+      =< @talent_profile.chest
+      |&quot;
+      br
+      strong Bicep:
+      =< @talent_profile.bicep
+      |&quot;
+      br
+      strong Inseam:
+      =< @talent_profile.inseam
+      |&quot;
+      br
+      strong Suit:
+      =< @talent_profile.suit
+      br
+      strong Hat:
+      =< @talent_profile.hat
+      r
+    strong Shoe Size:
+    =< @talent_profile.shoe
     br
     strong Ethnicity:
-    - @talent_profile.ethnicity.each do |ethnicity|
+    - @talent_profile.ethnicity.each do |talent_ethnicity|
       br
-      = ethnicity
+      = talent_ethnicity
+    strong Languages:
+    - @talent_profile.languages.each do |talent_languages|
+      br
+      = talent_languages
     strong Experience:
     =< @talent_profile.experience
     br
     strong Work:
-    - @talent_profile.work.each do |work_value|
+    - @talent_profile.work.each do |talent_work|
       br
-      = work_value
+      = talent_work
     strong Rate:
     |&nbsp; &#36;
     =<> @talent_profile.rate
@@ -82,6 +109,10 @@
 
   hr
 
+  blockquote Skills and Special Abilities
+  p = @talent_profile.skills
+
+  hr
+
   blockquote About Me
-  p
-    = @talent_profile.bio
+  p = @talent_profile.bio

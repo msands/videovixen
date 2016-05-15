@@ -24,11 +24,11 @@
       = f.input :bicep, collection: TalentProfile::BICEP
       = f.input :inseam, collection: TalentProfile::INSEAM
       = f.input :suit, collection: TalentProfile::SUIT
-      = f.input :glove, collection: TalentProfile::GLOVE
       = f.input :hat, collection: TalentProfile::HAT
+    = f.input :glove, collection: TalentProfile::GLOVE
     = f.input :shoe, collection: TalentProfile::SHOE
     = f.input :ethnicity, collection: TalentProfile::ETHNICITIES, as: :check_boxes
-    = f.input :languages, colection: TalentProfile::LANGUAGES, as: :check_boxes, label: "Languages and Dialects (Select all that apply)"
+    = f.input :languages, collection: TalentProfile::LANGUAGES, as: :check_boxes, label: "Languages and Dialects (Select all that apply)"
     = f.input :experience, collection: TalentProfile::EXPERIENCE
     = f.input :work, collection: TalentProfile::WORK, as: :check_boxes, label: "Work Desired (Select all that apply)"
     = f.input :rate

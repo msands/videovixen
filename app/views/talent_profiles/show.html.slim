@@ -18,34 +18,62 @@
     strong Weight:
     =< @talent_profile.weight
     br
-    strong Bust:
-    =< @talent_profile.bust
-    |&quot;
-    br
-    strong Waist:
-    =< @talent_profile.waist
-    |&quot;
-    br
-    strong Hips:
-    =< @talent_profile.hips
-    |&quot;
-    br
-    strong Cup:
-    =< @talent_profile.cup
-    br
-    strong Dress:
-    =< @talent_profile.dress
+    - if @talent_profile.gender.include? 'Female'
+      strong Bust:
+      =< @talent_profile.bust
+      |&quot;
+      br
+      strong Waist:
+      =< @talent_profile.waist
+      |&quot;
+      br
+      strong Hips:
+      =< @talent_profile.hips
+      |&quot;
+      br
+      strong Cup:
+      =< @talent_profile.cup
+      br
+      strong Dress:
+      =< @talent_profile.dress
+      br
+    - if @talent_profile.gender.include? 'Male'
+      strong Chest:
+      =< @talent_profile.chest
+      |&quot;
+      br
+      strong Bicep:
+      =< @talent_profile.bicep
+      |&quot;
+      br
+      strong Inseam:
+      =< @talent_profile.inseam
+      |&quot;
+      br
+      strong Suit:
+      =< @talent_profile.suit
+      br
+      strong Hat:
+      =< @talent_profile.hat
+      br
+    strong Shoe Size:
+    =< @talent_profile.shoe
     br
     strong Ethnicity:
-    - @talent_profile.ethnicity.each do |ethnicity|
+    - @talent_profile.ethnicity.each do |talent_ethnicity|
       br
-      = ethnicity
+      = talent_ethnicity
+    strong Languages:
+    - @talent_profile.languages.each do |talent_languages|
+      br
+      = talent_languages
     strong Experience:
     =< @talent_profile.experience
     br
     strong Work:
-    =< @talent_profile.work
-    br
+    - @talent_profile.work.each do |talent_work|
+      br
+      = talent_work
     strong Rate:
     =< @talent_profile.rate
     |&nbsp; &#36;
@@ -61,10 +89,10 @@
 
     blockquote Info
     strong Last Login:
-    =< @current_user.updated_at.strftime("%B %d, %Y")
+    =< @talent_profile.updated_at.strftime("%B %d, %Y")
     br
     strong Sign Up:
-    =< @current_user.created_at.strftime("%B %d, %Y")
+    =< @talent_profile.user.created_at.strftime("%B %d, %Y")
 
 .col-md-9
   h2 = talent_username
@@ -76,9 +104,13 @@
 
   hr
 
+  blockquote Skills and Special Abilities
+  p = @talent_profile.skills
+
+  hr
+
   blockquote About Me
-  p
-    = @talent_profile.bio
+  p = @talent_profile.bio
 
 - if @talent_profile.user == current_user
   = link_to 'Edit', edit_talent_profile_path(@talent_profile)
