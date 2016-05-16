@@ -19,7 +19,10 @@ nav.large
         - if user_signed_in?
           li.dropdown role="presentation"
             a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-              = current_user.email
+              - if current_user.username.present?
+                = current_user.username
+              - else
+                = current_user.email
               span.caret
             ul.dropdown-menu
               li= link_to "My Profile", my_profiles_path
