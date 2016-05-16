@@ -1,0 +1,14 @@
+= simple_form_for(@director_profile) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :gender, collection: DirectorProfile::GENDER
+    = f.input :location
+    = f.input :company_name
+    = f.input :experience, collection: DirectorProfile::EXPERIENCE
+    = f.input :compensation, collection: DirectorProfile::COMPENSATION
+    = f.input :categories, collection: DirectorProfile::CATEGORIES, as: :check_boxes
+    = f.input :bio
+
+  .form-actions
+    = f.button :submit

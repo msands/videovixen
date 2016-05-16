@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gender: MyString
+  location: MyString
+  experience: MyString
+  compensation: MyString
+  categories: MyString
+  bio: MyText
+
+two:
+  gender: MyString
+  location: MyString
+  experience: MyString
+  compensation: MyString
+  categories: MyString
+  bio: MyText

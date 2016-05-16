@@ -1,4 +1,4 @@
-class MyProfilesController < TalentProfilesController
+class MyProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def show
