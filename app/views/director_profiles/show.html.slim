@@ -1,2 +1,31 @@
-h1 DirectorProfiles#show
-p Find me in app/views/director_profiles/show.html.slim
+.col-md-3
+  p = image_tag("http://placehold.it/200x266")
+  h4 = link_to "Photo Gallery", '#'
+
+  hr
+
+  blockquote Stats
+  p
+    strong Experience:
+    =< @director_profile.experience
+    br
+    strong Compensation:
+    =< @director_profile.compensation
+    br
+    strong Categories
+    - @director_profile.categories.each do |director_categories|
+      = director_categories
+      br
+
+.col-md-9
+  h2 = @director_profilfe.user.username
+
+  p
+    = @director_profile.gender
+    br
+    = @director_profile.location
+
+  hr
+
+  blockquote About
+  p = @director_profile.bio
