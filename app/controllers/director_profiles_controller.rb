@@ -38,5 +38,5 @@ class DirectorProfilesController < ApplicationController
   private
 
   def director_profile_params
-    params.require(:director_profile).permit(:gender, :location, :experience, :compensation, :bio, :user_id, categories: [])
+    params.require(:director_profile).permit(:gender, :location, :experience, :compensation, :bio, :company_name, categories: [])
 end
