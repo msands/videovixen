@@ -2,8 +2,8 @@ class TalentProfile < ActiveRecord::Base
   GENDERS = ["Female", "Male"]
   HEIGHT_FEET = ["4", "5", "6"]
   HEIGHT_INCHES = (0..11)
-  WEIGHT = (100..250)
-  EYE = ["Black", "Brown", "Blue", "Green", "Gray", "Hazel"]
+  WEIGHT = (100..300).step(5)
+  EYE = ["Brown", "Blue", "Green", "Gray", "Hazel"]
   HAIR_COLOR = ["Black", "Blonde", "Brunette", "Gray", "Other"]
   HAIR_LENGTH = ["Short", "Medium", "Long"]
   HAIR_TYPE = ["Straight", "Curly", "Natural", "Dreadlocks"]
