@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'director_profiles/index'
+
+  get 'director_profiles/show'
+
+  get 'director_profiles/new'
+
+  get 'director_profiles/create'
+
+  get 'director_profiles/update'
+
   resource :my_profiles, only: :show
 
   resources :talent_profiles
