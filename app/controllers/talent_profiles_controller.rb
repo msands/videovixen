@@ -1,5 +1,5 @@
 class TalentProfilesController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
   skip_before_action :check_profile, only: [:new, :create]
 
   def index
@@ -50,6 +50,6 @@ class TalentProfilesController < ApplicationController
   private
 
   def talent_profile_params
-    params.require(:talent_profile).permit(:gender, :birthday, :location, :height_feet, :height_inches, :weight, :bust, :waist, :hips, :cup, :dress, :ethnicity, :experience, :rate, :rate_per, :travel, :hair_makeup, :wardrobe, :profile_pic, :bio, :chest, :bicep, :inseam, :suit, :glove, :hat, :shoe, ethnicity: [], work: [])
+    params.require(:talent_profile).permit(:gender, :birthday, :location, :height_feet, :height_inches, :weight, :bust, :waist, :hips, :cup, :dress, :ethnicity, :experience, :rate, :rate_per, :travel, :hair_makeup, :wardrobe, :profile_pic, :bio, :chest, :bicep, :inseam, :suit, :glove, :hat, :shoe, :eye_color, :hair_color, :hair_length, :hair_type, :skills, ethnicity: [], work: [], languages: [])
   end
 end
