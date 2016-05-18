@@ -18,7 +18,7 @@ class DirectorProfilesController < ApplicationController
   def create
     @director_profile = DirectorProfile.new(director_profile_params)
     @director_profile.user = current_user
-    if @director_profiel.save
+    if @director_profile.save
       redirect_to my_profiles_path, notice: 'Director profile was successfully saved'
     else
       flash[:error] = 'There was an error saving your profile'
@@ -39,4 +39,5 @@ class DirectorProfilesController < ApplicationController
 
   def director_profile_params
     params.require(:director_profile).permit(:gender, :location, :experience, :compensation, :bio, :company_name, categories: [])
+  end
 end

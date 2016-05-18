@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resource :director_profiles, except: :destroy
+  resources :director_profiles, except: :destroy
   resource :my_profiles, only: :show
 
   resources :talent_profiles
