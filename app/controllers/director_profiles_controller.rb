@@ -1,4 +1,6 @@
 class DirectorProfilesController < ApplicationController
+  has_many :comments, as: :commentable
+
   def index
     @director_profiles = DirectorProfiles.all
   end
