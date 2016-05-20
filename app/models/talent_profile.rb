@@ -29,6 +29,7 @@ class TalentProfile < ActiveRecord::Base
   WARDROBE = ["Yes", "No"]
 
   belongs_to :user
+  has_many :comments, as: :commentable
 
   validates :gender, presence: true
   acts_as_birthday :birthday

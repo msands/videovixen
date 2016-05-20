@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = @commentables.comments.new
+    @comment = @commentable.comments.new
   end
 
   def create

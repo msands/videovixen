@@ -1,7 +1,6 @@
 class TalentProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   skip_before_action :check_profile, only: [:new, :create]
-  has_many :comments, as: :commentable
 
   def index
     @talent_profiles = TalentProfile.all

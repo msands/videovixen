@@ -5,6 +5,7 @@ class DirectorProfile < ActiveRecord::Base
   CATEGORIES = ["Acting", "Exotic", "Fitness", "Lingerie", "Music Video", "Nude", "Promotional", "Swimwear"]
 
   belongs_to :user
+  has_many :comments, as: :commentable
 
   delegate :email, to: :user
 end
