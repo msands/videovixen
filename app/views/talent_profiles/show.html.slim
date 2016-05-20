@@ -112,6 +112,12 @@
   blockquote About Me
   p = @talent_profile.bio
 
+  hr
+
+  blockquote Reviews
+  == render 'comments/comments'
+  == render 'comments/form'
+
 - if @talent_profile.user == current_user
   = link_to 'Edit', edit_talent_profile_path(@talent_profile)
   '|

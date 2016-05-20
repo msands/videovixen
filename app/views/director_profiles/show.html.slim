@@ -29,3 +29,8 @@
 
   blockquote About
   p = @director_profile.bio
+
+  hr
+  blockquote Reviews
+  == render 'comments/comments'
+  == render 'comments/form'
