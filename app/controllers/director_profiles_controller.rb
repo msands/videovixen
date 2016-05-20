@@ -7,6 +7,9 @@ class DirectorProfilesController < ApplicationController
 
   def show
     @director_profile = DirectorProfile.find(params[:id])
+    @commentable = @director_profile
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def new

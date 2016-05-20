@@ -9,6 +9,9 @@ class TalentProfilesController < ApplicationController
 
   def show
     @talent_profile = TalentProfile.find(params[:id])
+    @commentable = @talent_profile
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def new
