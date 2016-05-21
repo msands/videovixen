@@ -1,0 +1,13 @@
+= simple_form_for [@commentable, @comment] do |f|
+  - if @comment.errors.any?
+    .error_messages
+      h2 Please correct the following errors.
+      ul
+        - @comment.errors.full_messages.each do |msg|
+          li = msg
+
+  .form-inputs
+    = f.input :content, as: :wysihtml5, :input_html => { :rows => 5 }
+
+  .form-actions
+    = f.button :submit

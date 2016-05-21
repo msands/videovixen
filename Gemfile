@@ -15,6 +15,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'will_paginate', '~> 3.1.0'
 
+# Enable HTML text editing
+gem 'bootstrap-wysihtml5-rails', '~> 0.3.3.8'
+
 # Simple Forms
 gem 'simple_form', '~> 3.2.1'
 

@@ -4,6 +4,8 @@ class MyProfilesController < ApplicationController
   def show
     @talent_profile = current_user.talent_profile
     render 'show'
+    @commentable = @talent_profile || @director_profile
+    @comments = @commentable.comments
   end
 
 end

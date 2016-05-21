@@ -19,3 +19,4 @@
 //= require navbar
 //= require static_pages
 //= require talent_profiles
+//= require bootstrap-wysihtml5

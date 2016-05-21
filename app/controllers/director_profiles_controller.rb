@@ -1,10 +1,14 @@
 class DirectorProfilesController < ApplicationController
+
   def index
     @director_profiles = DirectorProfiles.all
   end
 
   def show
     @director_profile = DirectorProfile.find(params[:id])
+    @commentable = @director_profile
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def new

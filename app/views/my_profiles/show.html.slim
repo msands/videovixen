@@ -77,9 +77,9 @@
       = talent_work
     strong Rate:
     |&nbsp; &#36;
-    =<> @talent_profile.rate
-    |per
-    =< @talent_profile.rate_per
+    => @talent_profile.rate
+    | per
+    =<> @talent_profile.rate_per
     br
     strong Travel:
     =< @talent_profile.travel
@@ -116,3 +116,8 @@
 
   blockquote About Me
   p = @talent_profile.bio
+
+  hr
+
+  blockquote Reviews
+

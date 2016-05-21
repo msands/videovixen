@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :director_profiles, except: :destroy
-  resource :my_profiles, only: :show
+  resources :director_profiles, except: :destroy do
+    resources :comments
+  end
 
-  resources :talent_profiles
+  resource :my_profiles, only: :show do
+    resources :comments
+  end
+
+  resources :talent_profiles do
+    resources :comments
+  end
+
   get '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :controllers => { :registrations => 'registrations' }
