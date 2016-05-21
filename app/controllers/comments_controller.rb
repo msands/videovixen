@@ -1,16 +1,20 @@
 class CommentsController < ApplicationController
   before_filter :load_commentable
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @commentable = @commentable.comments
+    @talent_profile = TalentProfile.find(params[:talent_profile_id])
+    @comments = @talent_profile.comments
   end
 
   def new
-    @comment = @commentable.comments.new
+    @talent_profile = TalentProfile.find(params[:talent_profile_id])
+    @talent_profile = @talent_profile.comments.new
   end
 
   def create
-    @comment = @commentable.comments.new(params[comment_params])
+    @talent_profile = TalentProfile.find(params[:talent_profile_id])
+    @comment = @talent_profile.comments.new(comment_params)
     if @comment.save
       redirect_to @commentable, notice: "Comment successfully created!"
     else
@@ -25,7 +29,7 @@ class CommentsController < ApplicationController
   end
 
   def load_commentable
-    klass = [TalentProfile, DirectorProfile, MyProfile].detect { |c| params["#{c.name.underscore}_id"]}
+    klass = [TalentProfile, DirectorProfile].detect { |c| params["#{c.name.underscore}_id"]}
     @commentable = klass.find(params["#{klass.name.underscore}_id"])
   end
 end

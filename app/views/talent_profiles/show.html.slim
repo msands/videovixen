@@ -75,8 +75,10 @@
       br
       = talent_work
     strong Rate:
-    =< @talent_profile.rate
     |&nbsp; &#36;
+    => @talent_profile.rate
+    | per
+    =<> @talent_profile.rate_per
     br
     strong Travel:
     =< @talent_profile.travel

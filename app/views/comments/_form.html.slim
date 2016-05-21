@@ -7,7 +7,7 @@
           li = msg
 
   .form-inputs
-    = f.input :content, rows: 8
+    = f.input :content, :as => :text, :input_html => { :rows => 5 }
 
   .form-actions
     = f.button :submit

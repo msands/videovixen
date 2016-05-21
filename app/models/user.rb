@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :authentication_keys => [:login]
 
   attr_accessor :login
-  has_one :talent_profile, dependent: :destroy
+  has_one :talent_profile || :director_profile, dependent: :destroy
+  has_many :comments
 
   #delegate :username, to: :talent_profile
 

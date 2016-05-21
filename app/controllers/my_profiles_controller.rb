@@ -6,7 +6,6 @@ class MyProfilesController < ApplicationController
     render 'show'
     @commentable = @talent_profile || @director_profile
     @comments = @commentable.comments
-    @comment = Comments.new
   end
 
 end
