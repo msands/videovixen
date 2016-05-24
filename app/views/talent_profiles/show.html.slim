@@ -118,7 +118,12 @@
 
   blockquote Reviews
   == render 'comments/comments'
-  == render 'comments/form'
+  - if can? :create, @comment
+    == render 'comments/form'
+  - else
+    | Please
+    =<> link_to "log in", new_user_session_path
+    | to comment
 
 - if @talent_profile.user == current_user
   = link_to 'Edit', edit_talent_profile_path(@talent_profile)

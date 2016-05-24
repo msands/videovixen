@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
   before_filter :load_commentable
   before_action :authenticate_user!, only: [:new, :create]
 
+  load_and_authorize_resource :nested => :talent_profile || :director_profile
+
   def index
     @talent_profile = TalentProfile.find(params[:talent_profile_id])
     @comments = @talent_profile.comments

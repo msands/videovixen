@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
   validate :validate_username
   # after_initialize :create_login, :if => :new_record?
 
+  scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**NON_ADMIN_ROLES.index(role.to_s)} > 0 "} }
+
+  NON_ADMIN_ROLES = %w[talent director]
+
   def login=(login)
     @login = login
   end
@@ -64,5 +68,17 @@ class User < ActiveRecord::Base
   #     end
   #   end
   # end
+
+  def roles=(roles)
+    self.roles_mask = (roles & NON_ADMIN_ROLES).map { |r| 2**NON_ADMIN_ROLES.index(r) }.sum
+  end
+
+  def roles
+    NON_ADMIN_ROLES.reject { |r| ((roles_mask || 0) & 2**NON_ADMIN_ROLES.index(r)).zero? }
+  end
+
+  def role?(role)
+    roles.include? role.to_s
+  end
 
 end
