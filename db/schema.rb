@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521040234) do
+ActiveRecord::Schema.define(version: 20160525032521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "user_id"
@@ -46,6 +53,12 @@ ActiveRecord::Schema.define(version: 20160521040234) do
     t.datetime "updated_at",   null: false
     t.integer  "user_id"
     t.string   "company_name"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "talent_profiles", force: :cascade do |t|
@@ -117,6 +130,7 @@ ActiveRecord::Schema.define(version: 20160521040234) do
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
     t.integer  "roles_mask"
+    t.string   "role"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
