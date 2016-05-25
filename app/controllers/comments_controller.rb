@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_commentable
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit]
 
   def index
     @talent_profile = TalentProfile.find(params[:talent_profile_id])
@@ -14,11 +14,28 @@ class CommentsController < ApplicationController
 
   def create
     @talent_profile = TalentProfile.find(params[:talent_profile_id])
-    @comment = @talent_profile.comments.new(comment_params)
+    @comment = @talent_profile.comments.build(comment_params)
+    @comment.user = current_user
     if @comment.save
       redirect_to @commentable, notice: "Comment successfully created!"
     else
       render :new
+    end
+  end
+
+  def edit
+    @talent_profile = TalentProfile.find(params[:talent_profile_id])
+    @comment = @talent_profile.comments.find(params[:id])
+  end
+
+  def update
+    @talent_profile = TalentProfile.find(params[:talent_profile_id])
+    @comment = @talent_profile.comments.find(params[:id])
+    if @comment.update_attributes(comment_params)
+      flash[:success] = "Comment updated"
+      redirect_to @commentable
+    else
+      render 'edit'
     end
   end
 
