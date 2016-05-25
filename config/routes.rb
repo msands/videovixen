@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   resource :my_profiles, only: :show do
-    resources :comments
+    resources :comments, only: :show
   end
 
   resources :talent_profiles do
