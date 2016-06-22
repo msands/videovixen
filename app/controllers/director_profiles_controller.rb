@@ -1,4 +1,6 @@
 class DirectorProfilesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  skip_before_action :check_profile, only: [:new, :create]
 
   def index
     @director_profiles = DirectorProfiles.all
@@ -32,7 +34,7 @@ class DirectorProfilesController < ApplicationController
 
   def update
     @director_profile = DirectorProfile.find(params[:id])
-    if @talent_profile.update_attributes(director_profile_params)
+    if @director_profile.update_attributes(director_profile_params)
       flash[:success] = "Profile updated"
     else
       render 'edit'

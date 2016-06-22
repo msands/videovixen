@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def profile_completed?
-    current_user.talent_profile.present?
+    current_user.talent_profile.present? || current_user.director_profile.present?
   end
 
   def configure_permitted_parameters
