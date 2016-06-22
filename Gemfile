@@ -41,7 +41,7 @@ gem 'omniauth-instagram', '~> 1.0.2'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 
 # Add user roles
-gem 'cancancan', '~> 1.14.0'
+gem 'pundit'
 
 # Add birthday gem
 gem 'birthday', '~> 0.3.0'

@@ -61,7 +61,6 @@ GEM
       railties (>= 3.0)
     builder (3.2.2)
     byebug (8.2.4)
-    cancancan (1.14.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -168,6 +167,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -269,7 +270,6 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   bootstrap-wysihtml5-rails (~> 0.3.3.8)
   byebug
-  cancancan (~> 1.14.0)
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.6)
   devise_invitable (~> 1.5.5)
@@ -286,6 +286,7 @@ DEPENDENCIES
   paperclip (= 4.3.6)
   pg
   pry
+  pundit
   rails (= 4.2.1)
   rails_12factor (~> 0.0.3)
   sass-rails (~> 5.0)

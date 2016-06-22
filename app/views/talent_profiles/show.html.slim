@@ -118,12 +118,10 @@
 
   blockquote Reviews
   == render 'comments/comments'
-  - if can? :create, @comment
+  - if policy(@comment).create?
     == render 'comments/form'
   - else
-    | Please
-    =<> link_to "log in", new_user_session_path
-    | to comment
+    | You are cannot comment on this profile
 
 - if @talent_profile.user == current_user
   = link_to 'Edit', edit_talent_profile_path(@talent_profile)

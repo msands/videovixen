@@ -10,7 +10,7 @@ class TalentProfilesController < ApplicationController
     @talent_profile = TalentProfile.find(params[:id])
     @commentable = @talent_profile
     @comments = @commentable.comments
-    @comment = Comment.new
+    @comment = @commentable.comments.build
   end
 
   def new
