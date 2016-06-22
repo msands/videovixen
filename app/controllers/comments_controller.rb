@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
     @talent_profile = TalentProfile.find(params[:talent_profile_id])
     @comment = @talent_profile.comments.build(comment_params)
     @comment.user = current_user
+    authorize @comment
     if @comment.save
       redirect_to @commentable, notice: "Comment successfully created!"
     else
