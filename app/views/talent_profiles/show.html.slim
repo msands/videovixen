@@ -118,7 +118,10 @@
 
   blockquote Reviews
   == render 'comments/comments'
-  == render 'comments/form'
+  - if policy(@comment).create?
+    == render 'comments/form'
+  - else
+    | You are cannot comment on this profile
 
 - if @talent_profile.user == current_user
   = link_to 'Edit', edit_talent_profile_path(@talent_profile)

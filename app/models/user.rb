@@ -6,14 +6,26 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :authentication_keys => [:login]
 
   attr_accessor :login
-  has_one :talent_profile || :director_profile, dependent: :destroy
+  has_one :talent_profile, dependent: :destroy
+  has_one :director_profile, dependent: :destroy
   has_many :comments
 
   #delegate :username, to: :talent_profile
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validate :validate_username
-  # after_initialize :create_login, :if => :new_record?
+
+  TALENT_ROLE = 'talent'
+  DIRCTOR_ROLE = 'director'
+  NON_ADMIN_ROLES = %w[talent director]
+
+  def talent?
+    role == TALENT_ROLE
+  end
+
+  def director?
+    role == DIRECTOR_ROLE
+  end
 
   def login=(login)
     @login = login
@@ -50,19 +62,4 @@ class User < ActiveRecord::Base
   def password_required?
     super && (authentications.empty? || !password.blank?)
   end
-
-  # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address#gmail-or-mecom-style
-  #
-  # def create_login
-  #   if self.username.blank?
-  #     email = self.email.split(/@/)
-  #     login_taken = Pro.where(:username => email[0]).first
-  #     unless login_taken
-  #       self.username = email[0]
-  #     else
-  #       self.username = self.email
-  #     end
-  #   end
-  # end
-
 end

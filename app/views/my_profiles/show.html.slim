@@ -1,123 +1,125 @@
-.col-md-3
-  p= image_tag @talent_profile.profile_pic.url(:profile)
-  h4= link_to "Photo Gallery", '#'
+- if current_user.roles_mask == 1
+  .col-md-3
+    p= image_tag @talent_profile.profile_pic.url(:profile)
+    h4= link_to "Photo Gallery", '#'
 
-  hr
+    hr
 
-  blockquote Stats
-  p
-    strong Age:
-    =< @talent_profile.birthday_age
-    br
-    strong Height:
-    =< @talent_profile.height_feet
-    |&#39;
-    =< @talent_profile.height_inches
-    |&quot;
-    br
-    strong Weight:
-    =< @talent_profile.weight
-    |&quot;
-    br
-    - if @talent_profile.gender.include? 'Female'
-      strong Bust:
-      =< @talent_profile.bust
+    blockquote Stats
+    p
+      strong Age:
+      =< @talent_profile.birthday_age
+      br
+      strong Height:
+      =< @talent_profile.height_feet
+      |&#39;
+      =< @talent_profile.height_inches
       |&quot;
       br
-      strong Waist:
-      =< @talent_profile.waist
+      strong Weight:
+      =< @talent_profile.weight
       |&quot;
       br
-      strong Hips:
-      =< @talent_profile.hips
-      |&quot;
+      - if @talent_profile.gender.include? 'Female'
+        strong Bust:
+        =< @talent_profile.bust
+        |&quot;
+        br
+        strong Waist:
+        =< @talent_profile.waist
+        |&quot;
+        br
+        strong Hips:
+        =< @talent_profile.hips
+        |&quot;
+        br
+        strong Cup:
+        =< @talent_profile.cup
+        br
+        strong Dress:
+        =< @talent_profile.dress
+        br
+      - if @talent_profile.gender.include? 'Male'
+        strong Chest:
+        =< @talent_profile.chest
+        |&quot;
+        br
+        strong Bicep:
+        =< @talent_profile.bicep
+        |&quot;
+        br
+        strong Inseam:
+        =< @talent_profile.inseam
+        |&quot;
+        br
+        strong Suit:
+        =< @talent_profile.suit
+        br
+        strong Hat:
+        =< @talent_profile.hat
+        r
+      strong Shoe Size:
+      =< @talent_profile.shoe
       br
-      strong Cup:
-      =< @talent_profile.cup
+      strong Ethnicity:
+      - @talent_profile.ethnicity.each do |talent_ethnicity|
+        br
+        = talent_ethnicity
+      strong Languages:
+      - @talent_profile.languages.each do |talent_languages|
+        br
+        = talent_languages
+      strong Experience:
+      =< @talent_profile.experience
       br
-      strong Dress:
-      =< @talent_profile.dress
+      strong Work:
+      - @talent_profile.work.each do |talent_work|
+        br
+        = talent_work
+      strong Rate:
+      |&nbsp; &#36;
+      => @talent_profile.rate
+      | per
+      =<> @talent_profile.rate_per
       br
-    - if @talent_profile.gender.include? 'Male'
-      strong Chest:
-      =< @talent_profile.chest
-      |&quot;
+      strong Travel:
+      =< @talent_profile.travel
       br
-      strong Bicep:
-      =< @talent_profile.bicep
-      |&quot;
+      strong Own Hair/Makeup:
+      =< @talent_profile.hair_makeup
       br
-      strong Inseam:
-      =< @talent_profile.inseam
-      |&quot;
+      strong Own Wardrobe:
+      =< @talent_profile.wardrobe
+
+      blockquote Info
+      strong Last Login:
+      =< @current_user.updated_at.strftime("%B %d, %Y")
       br
-      strong Suit:
-      =< @talent_profile.suit
+      strong Sign Up:
+      =< @current_user.created_at.strftime("%B %d, %Y")
+
+  .col-md-9
+    h5
+      = link_to "Edit Profile", edit_talent_profile_path(current_user.talent_profile)
+    h2 = current_user.username
+
+    p
+      = @talent_profile.gender
       br
-      strong Hat:
-      =< @talent_profile.hat
-      r
-    strong Shoe Size:
-    =< @talent_profile.shoe
-    br
-    strong Ethnicity:
-    - @talent_profile.ethnicity.each do |talent_ethnicity|
-      br
-      = talent_ethnicity
-    strong Languages:
-    - @talent_profile.languages.each do |talent_languages|
-      br
-      = talent_languages
-    strong Experience:
-    =< @talent_profile.experience
-    br
-    strong Work:
-    - @talent_profile.work.each do |talent_work|
-      br
-      = talent_work
-    strong Rate:
-    |&nbsp; &#36;
-    => @talent_profile.rate
-    | per
-    =<> @talent_profile.rate_per
-    br
-    strong Travel:
-    =< @talent_profile.travel
-    br
-    strong Own Hair/Makeup:
-    =< @talent_profile.hair_makeup
-    br
-    strong Own Wardrobe:
-    =< @talent_profile.wardrobe
+      = @talent_profile.location
 
-    blockquote Info
-    strong Last Login:
-    =< @current_user.updated_at.strftime("%B %d, %Y")
-    br
-    strong Sign Up:
-    =< @current_user.created_at.strftime("%B %d, %Y")
+    hr
 
-.col-md-9
-  h5
-    = link_to "Edit Profile", edit_talent_profile_path(current_user.talent_profile)
-  h2 = current_user.username
+    blockquote Skills and Special Abilities
+    p = @talent_profile.skills
 
-  p
-    = @talent_profile.gender
-    br
-    = @talent_profile.location
+    hr
 
-  hr
+    blockquote About Me
+    p = @talent_profile.bio
 
-  blockquote Skills and Special Abilities
-  p = @talent_profile.skills
+    hr
 
-  hr
-
-  blockquote About Me
-  p = @talent_profile.bio
-
-  hr
-
-  blockquote Reviews
-
+    blockquote Reviews
+- else
+  h2 This should be code for the Director Profile, MyProfile show view

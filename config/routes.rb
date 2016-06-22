@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   resource :my_profiles, only: :show do
-    resources :comments
+    resources :comments, only: :show
   end
 
   resources :talent_profiles do
@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :controllers => { :registrations => 'registrations' }
+
+  devise_scope :user do
+    get '/users/sign_up/:role' => 'registrations#new', :as => 'new_user_wth_role'
+  end
 
   root 'static_pages#home'
 

@@ -40,6 +40,9 @@ gem 'omniauth-facebook', '~> 3.0.0'
 gem 'omniauth-instagram', '~> 1.0.2'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 
+# Add user roles
+gem 'pundit'
+
 # Add birthday gem
 gem 'birthday', '~> 0.3.0'
 

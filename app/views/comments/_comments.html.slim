@@ -2,3 +2,5 @@
   - @comments.each do |comment|
     .comment
       = simple_format comment.content
+      - if comment.user == current_user
+        = link_to "Edit", edit_talent_profile_comment_path(@talent_profile, comment)
