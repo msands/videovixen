@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   resources :authentications
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, :controllers => { :registrations => 'registrations' }
 
+  devise_scope :user do
+    get '/users/sign_up/:role' => 'registrations#new', :as => 'new_user_wth_role'
+  end
+
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
